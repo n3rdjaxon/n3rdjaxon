@@ -327,7 +327,7 @@
 </div>
 <script>
   (function() {
-    // Play/Pause Micro-interaction toggle
+        // Navigation active state & smooth scroll     const navLinks = document.querySelectorAll('nav a[data-path]');     navLinks.forEach(function(link) {       link.addEventListener('click', function(e) {         navLinks.forEach(function(l) {           l.classList.remove('text-primary', 'border-b', 'border-primary');           l.classList.add('text-on-surface-variant');           l.removeAttribute('aria-current');         });         this.classList.remove('text-on-surface-variant');         this.classList.add('text-primary', 'border-b', 'border-primary');         this.setAttribute('aria-current', 'page');         var target = this.getAttribute('href');         if (target && target !== '#') {           e.preventDefault();           var el = document.querySelector(target);           if (el) {             el.scrollIntoView({ behavior: 'smooth', block: 'start' });           }         }       });     });
     const toggleBtn = document.getElementById('playback-toggle');
     if (toggleBtn) {
       let isPlaying = true;
